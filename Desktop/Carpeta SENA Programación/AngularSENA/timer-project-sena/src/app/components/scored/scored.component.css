@@ -1,0 +1,80 @@
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+    width: 52vw;
+    margin: auto;
+    margin-top: 2.5vw;
+}
+h5 {
+    font-size: 1.4vw;
+}
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #000000;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+}
+.teamScored {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(228, 100%, 5%);
+    width: 12vw;
+    height: 9vw;
+    gap: 1.8vh;
+    border-radius: 0.5vw;
+    border: 0.1vw solid #0C3ABD;
+}
+.buttonPlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0C3ABD;
+    border: none;
+    height: 7vw;
+    width: 7vw;
+    border-radius: 20vw;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.buttonPlay:hover {
+    background-color: rgb(14, 208, 14);
+}
+.buttonPlay img {
+    height: 4vw;
+}
+.teamScored button {
+    color: white;
+    border: none;
+    border-radius: 1.5vw;
+    font-size: 1.2vw;
+    height: 2.4vw;
+    width: 6vw;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.teamScored button.enabled {
+    background-color: #0C3ABD;
+}
+.teamScored button.disabled {
+    background-color: #808080;
+    cursor: not-allowed;
+}
+.teamScored button:hover.enabled {
+    background-color: rgb(14, 208, 14);
+}

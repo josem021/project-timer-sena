@@ -1,0 +1,163 @@
+section {
+/*     border: 1px solid red; */
+    height: auto;
+}
+.modalWinner {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modalContentWinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    background-color: #0d2c87;
+    margin: 15% auto;
+    padding: 1vw;
+    border: 0.1vw solid #cecece;
+    border-radius: 0.6vw;
+    width: 50%;
+    /* height: 40%; */
+    text-align: center;
+    /* gap: 1vh; */
+}
+.modalContentWinner button {
+    border: none;
+    background-color: #0C3ABD;
+    border-radius: 0.1vw;
+    color: white;
+    height: 2vw;
+    width: 6vw;
+    cursor: pointer;
+    font-size: 0.7vw;
+    transition: 0.3s ease-in;
+}
+.modalContentWinner button:hover {
+    border: none;
+    background-color: #e8e8e8;
+    border-radius: 0.1vw;
+    color: rgb(0, 0, 0);
+    height: 2vw;
+    width: 6vw;
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%; 
+    z-index: 2;
+}
+.modal-content {
+    background: rgba(0, 0, 0, 0.905);
+    backdrop-filter: blur(0.15vw);
+    padding: 1vw;
+    border-radius: 2vw;
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.8vw;
+    gap: 2vw;
+}
+.modal-content form input {
+    height: 3vw;
+    width: 30vw;
+    border: none;
+    border-radius: 1vw;
+    font-size: 2vw;
+}
+.modal-content button {
+    border: none;
+    border-radius: 2vw;
+    height: 2.5vw;
+    width: 10vw;
+    font-size: 1.5vw;
+    background-color: #0C3ABD;
+    color: white;
+    cursor: pointer;
+}
+.backgroundTimmer {
+    display: grid;
+    place-content: center;
+    background-color: hsl(228, 100%, 5%);
+    margin: 0vw 22vw;
+    border-radius: 1vw;
+    border: 0.1vw solid #0C3ABD;
+    height: 31vw;
+    
+}
+.containerTeamName {
+    display: flex;
+    justify-content: space-between;
+    width: 32vw;
+/*     border: 3px solid green; */
+}
+.teamName {
+    border: 1px solid #0C3ABD;
+    padding: 1.3vw 2.3vw;
+    border-radius: 0.5vw;
+    font-size: 1.2vw;
+    margin-bottom: 2vw;
+}
+.containerTimer {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #0C3ABD;
+    border-radius: 0.5vw;
+    padding: 0.4vw;
+    /* padding: 2vw; */
+}
+.timeGlobal p {
+    font-size: 10vw;
+}
+.timeChoose {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vw;
+    gap: 1vw;
+}
+.timerDisplay {
+    font-size: 1.5vw;
+}
+.timeChoose select {
+    background-color: hsl(228, 100%, 5%);
+    border: 1px solid #0C3ABD;
+    border-radius: 0.4vw;
+    color: white;
+    height: 3vw;
+    font-size: 1.2vw;
+}
+.customTimeContent {
+    display: flex;
+    gap: 1vw;
+}
+.customTimeContent button {
+    border: none;
+    background-color: #0C3ABD;
+    border-radius: 0.1vw;
+    color: white;
+    height: 1.5vw;
+    width: 3.5vw;
+}
+.customTimeContent input {
+    font-size: 1vw;
+    height: 1.5vw;
+    width: 6.5vw;
+}

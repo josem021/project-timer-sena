@@ -1,0 +1,73 @@
+<main>
+    @if(isFormVisible) {
+    <div class="modal">
+            <div class="modal-content">
+                <form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+                    <label for="teamOneName">Nombre del Equipo 1</label>
+                    <input type="text" id="teamOneName" name="teamOneName" [ngModel]="teamOneName">
+                    
+                    <label for="teamTwoName">Nombre del Equipo 2</label>
+                    <input type="text" id="teamTwoName" name="teamTwoName" [ngModel]="teamTwoName">
+                
+                    <button type="submit" >Enviar</button>
+                </form>
+            </div>  
+    </div>
+    }
+    <div *ngIf="isWinnerModalVisible" class="modalWinner" >
+        <div class="modalContentWinner">
+            <h2>{{winnerTeamName}} ganó la partida</h2>
+            <button (click)="resetGame()">Jugar otra vez</button>
+        </div>
+    </div>
+    
+    <article class="backgroundTimmer">
+        <section>
+            <div class="containerTeamName">
+                <div class="teamName">
+                    <h4>
+                        <span id="teamOne">{{teamOneName}}</span>
+                    </h4>
+                </div>
+                <div class="teamName">
+                    <h4>
+                        <span id="teamTwo">{{teamTwoName}}</span>
+                    </h4>
+                </div>
+            </div>
+            <div class="containerTimer">
+                <div class="timeGlobal">
+                    <p>
+                        <span [style.color]="getScoreColor(teamOneScore, teamTwoScore)">{{teamOneScore < 10 ? '0' + teamOneScore : teamOneScore}}</span>:<span [style.color]="getScoreColor(teamTwoScore, teamOneScore)">{{teamTwoScore < 10 ? '0' + teamTwoScore : teamTwoScore}}
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="containerTimeSelected">
+                <div class="timeChoose">
+                    <select [(ngModel)]="selectedTime" (change)="onTimeChange($event)">
+                        <option value="60">1:00</option>
+                        <option value="300">5:00</option>
+                        <option value="600">10:00</option>
+                        <option value="0">Personalizar</option>
+                        <option *ngIf="customOption" [value]="formatCustomTime(customOption)">{{customOption}}</option>
+                    </select>
+                    
+                    @if(isCustomTime) {
+                        <div class="modalCustomTime">
+                            <div class="customTimeContent">
+                                <input *ngIf="isInputVisible" type="text" [(ngModel)]="customTimeInput" pattern="^[0-5]?[0-9]:[0-5]?[0-9]$">
+                                <button (click)="closeModal()">Cerrar</button>
+                            </div>
+                        </div>
+                    }
+                    <div class="timerDisplay">
+                        {{formattedTime}}
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </article>
+</main>
+<app-scored (gameOver)="showWinner()" (playClicked)="onPlayClicked()" (teamOneScores)="teamOneScores()" (teamTwoScores)="teamTwoScores()"></app-scored>

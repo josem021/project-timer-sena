@@ -1,0 +1,25 @@
+<section>
+    @if(isCountdownVisible) {
+        <div class="modal">
+            <div class="modal-content">
+                <h2>La partida empieza en {{countdownValue}}...</h2>
+            </div>
+        </div>
+    }
+    
+    <article class="teamScored">
+        <h5>{{teamOneName}}</h5>
+        <button [ngClass]="{'enabled': isWorking, 'disabled': !isWorking}" [disabled]="!isWorking" (click)="onTeamOneScores()">Anotar</button>
+    </article>
+    <article>
+        <button class="buttonPlay" (click)="onPlayClick()">
+            <img src="../../../assets/img/play-icon.svg" alt="play-icon">
+        </button>
+        
+    </article>
+    <article class="teamScored">
+        <h5>{{teamTwoName}}</h5>
+        <button [ngClass]="{'enabled': isWorking, 'disabled': !isWorking}" [disabled]="!isWorking" (click)="onTeamTwoScores()">Anotar</button>
+    </article>
+    
+</section>
