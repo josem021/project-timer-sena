@@ -1,0 +1,75 @@
+h1 {
+  font-family: "Jaldi", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-size: 2.3rem;
+}
+
+header {
+  background: var(--primary-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 1rem 1.5rem; 
+}
+
+header section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; 
+  padding: 0.05rem 0;
+}
+
+.navigation-wrapper {
+  background: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-bottom-left-radius: clamp(10px, 0.6rem, 15px);
+  border-bottom-right-radius: clamp(10px, 0.6em, 15px);
+  width: fit-content;
+  z-index: 2;
+  margin-top: 0;
+  /* Centramos el navigation-wrapper */
+  position: absolute;
+  top: 100%; /* Lo posicionamos justo debajo del header */
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: añade sombra para mejor apariencia */
+  font-size: 0.95rem; /* Reducimos un poco el tamaño de fuente para que se vea proporcionalmente más pequeño */
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: clamp(0.2rem, 0.3rem, 0.5rem);
+}
+
+nav ul li {
+  margin: 0 0.5rem;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+header ul a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-family: "Jaldi", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  font-weight: 550;
+}
